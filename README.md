@@ -24,7 +24,7 @@ a Visualized Testbed for Smart Grid Algorithm Evaluation
 
 
 
-In this article, we present Misaka, a visualized swarm testbed for smart grid algorithm evaluation, also an extendable open-source open-hardware platform for developing tabletop swarm interfaces.
+In this article, we present Misaka, a visualized swarm testbed for smart grid algorithm evaluation, also an extendable open-source open-hardware platform for developing tabletop tangible swarm interfaces.
 
 The platform consists of a collection of custom-designed 3-onmi-wheeled robots each 10 cm in diameter, high accuracy localization through a microdot pattern overlaid on top of the activity sheets, and a software framework for application development and control, while remaining affordable (per unit cost about 30 USD at the prototype stage). We illustrate the potential of tabletop swarm user interfaces through a set of smart grid algorithm development application scenarios developed with Misaka.
 
