@@ -32,7 +32,7 @@ zhonghw@tsinghua.edu.cn}
 \begin{abstract}
     In this article, we present Misaka, a visualized swarm testbed for smart grid algorithm evaluation, also an extendable open-source open-hardware platform for developing tabletop tangible swarm interfaces\cite{yan2019consensus}.
 
-    The platform consists of a collection of custom-designed 3-onmi-wheeled robots each 10 cm in diameter, high accuracy localization through a microdot pattern overlaid on top of the activity sheets, and a software framework for application development and control, while remaining affordable (per unit cost about 30 USD at the prototype stage). We illustrate the potential of tabletop swarm user interfaces through a set of smart grid algorithm development application scenarios developed with Misaka.
+    The platform consists of a collection of custom-designed 3 omni-directional wheels robots each 10 cm in diameter, high accuracy localization through a microdot pattern overlaid on top of the activity sheets, and a software framework for application development and control, while remaining affordable (per unit cost about 30 USD at the prototype stage). We illustrate the potential of tabletop swarm user interfaces through a set of smart grid algorithm development application scenarios developed with Misaka.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -42,6 +42,10 @@ zhonghw@tsinghua.edu.cn}
 \section{Introduction}
 
 Most recently, an increasing penetration of distributed energy resources (DERs) in Energy Internet imposes great challenges to conventional centralized economic dispatch\cite{yan2019consensus}.
+
+The centralized controller requires a high-bandwidth communication infrastructure and a high level of connectivity, poses reliability concerns due to the presence of a single point-of-failure, and is prone to modeling error. Moreover, both the future power grid and the communication network are likely to have a variable topology, which further undermines the efficacy of centralized mechanisms\cite{binetti2013distributed}.
+
+In the smart grid environment, the decision-making procedures are moving from centralized to distributed frameworks\cite{yang2011communication}.
 
 In the situation where many nodes need to be optimized, the traditional centralized optimization has problems such as communication congestion, node failure, and insufficient computing power.
 
@@ -71,6 +75,40 @@ Furthermore, as benefits, Misaka:
     \item can coexist in large numbers
     \item are lightweight, can operate on any horizontal surface, and relatively cost-effective: about 30 USD each now, down to \$15 if mass manufactured.
 \end{itemize}
+
+\section{Test Algorithm Explanation}
+
+
+\section{UI examples eith Misaka}
+
+\subsection{Dynamic iteration process physicalization}
+
+\subsection{Information transmission visualization}
+
+\subsection{Time-series navigation}
+
+We used Misaka to visualize and navigate in time-series data.
+
+\subsection{Multiple scatterplots}
+
+
+\section{Hardware and software design}
+
+\subsection{Hardware}
+
+Traditional two wheels differential drive normally used on mobile robots have manoeuvrability limitations and take time to sort out\cite{ribeiro2004three}. 
+
+An Omni wheel has an axis perpendicular to the axis of the core wheel, This allows the wheels to move in two directions, Omni-wheeled robots can move at any angle in any direction, without rotating beforehand.
+
+We use custom-designed platform with three omni-directional wheels, drvied by micro stepper motor to precisely control the rotation angle of each wheel.
+
+
+\subsection{Software}
+
+\section{Limitations and future work}
+
+\section{Conclusion}
+
 
 
 
