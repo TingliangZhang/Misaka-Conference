@@ -3,12 +3,21 @@
 编译命令：
 
 ```
-pdflatex Misaka.tex
+latexmk -bibtex -pdf Misaka.tex
 ```
+
+pdflatex Misaka.tex 更新不了bib
 
 用latexmk -xelatex会缺字体
 
 用latexmk 图片会报错
+
+编译：PDFLaTex ——>BibTex——>PDFLaTex——>PDFLaTex
+
+用PDFLaTeX编译你的 .tex 文件 , 这是生成一个 .aux 的文件, 这告诉 BibTeX 将使用那些应用；
+用BibTeX 编译 .bib 文件；
+再次用PDFLaTeX 编译你的 .tex 文件，这个时候在文档中已经包含了参考文献，但此时引用的编号可能不正确；
+最后用PDFLaTeX 编译你的 .tex 文件，如果一切顺利的话, 这是所有东西都已正常了。
 
 # 大纲   Outline
 
