@@ -12,7 +12,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Moveable Interactive Swarm Platform for Smart Grid Technology Development Test and Evaluation\\}
+\title{Misaka: Interactive Swarm Testbed for Smart Grid Distributed Algorithm Development Test and Evaluation\\}
 
 \author{\IEEEauthorblockN{1\textsuperscript{st} Tingliang Zhang}
 \IEEEauthorblockA{\textit{Dept. Electrical Engineering} \\
@@ -47,11 +47,11 @@ The centralized controller requires a high-bandwidth communication infrastructur
 
 In the smart grid environment, the decision-making procedures are moving from centralized to distributed frameworks\cite{yang2011communication}.
 
-So we present a swarm testbed to evaluate and visualize the algorithm and communication design of those newly proposed distributed frameworks for smart grid.
+But distributed algorithms are relatively difficult to understand, and need communication test to determine feasibility in real hardware scenario. So we present a swarm testbed to visualize and evaluate the algorithm and communication design of those newly proposed distributed frameworks for smart grid. A Misaka is a hardware and software system: a small omni-wheel robot with position sensing capabilities that can be freely arranged and repositioned on any horizontal surface, both through user manipulation and computer control. 
+
+Due to Misakas’ ability to quickly and freely reconfigure themselves spatially, a collection of Misakas can act as a display and can provide meaningful user output such as multiple scatterplots and line charts. Due to their ability to sense user actions, Misakas can also support rich input. For example, users can move or rotate Misakas to change parameter and manipulate others Misakas.The system is relatively lightweight and only requires any surface, such as a sheet of paper or a game board, with simple printed structured patterns for real-time high-accuracy 2D localization.
 
 To stimulate future research on swarm user interfaces, we distribute our Misaka tabletop swarm user interface platform in open-source and open-hardware.
-
-
 
 In summary, our contributions are:
 
@@ -101,6 +101,9 @@ Traditional two wheels differential drive normally used on mobile robots have ma
 An Omni wheel has an axis perpendicular to the axis of the core wheel, This allows the wheels to move in two directions, Omni-wheeled robots can move at any angle in any direction, without rotating beforehand.
 
 We use custom-designed platform with three omni-directional wheels, drvied by micro stepper motor to precisely control the rotation angle of each wheel.
+
+real-time high-accuracy 2D localization technique for mobile robots, based on simple printed patterns, building over algorithms previously developed for digital pens\cite{hostettler2016real}.
+
 
 
 \subsection{Software}
