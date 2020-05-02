@@ -13,6 +13,7 @@
 
 %Customize
 \usepackage{diagbox}
+\usepackage{subcaption}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -271,7 +272,14 @@ The relationship between physical world and algorithms is shown as the table~\re
 
 Misakas with LCD display above can serve as communication procedures visualization platform. Some Misakas representing nodes show current parameter values and calculate process on the LCD screen. Others transmit data on edges as messengers, whose display present carried packages.
 
-To illuminate information transmission visualization with Misaka, we assume there is a 3-node system. The initial output is random, assuming 5MW, 2MW, and 1MW. And the transition matrix Q is:
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{PPT0.png}
+    \caption{3-node information transmission visualization system}
+    \label{fig:PPT0}
+\end{figure}
+
+To illuminate information transmission visualization with Misaka, we assume there is a 3-node system, which is shown in fig~\ref{fig:PPT0}. The initial output is random, assuming 5MW, 2MW, and 1MW. And the transition matrix Q is:
 
 \begin{equation}
     Q=\left[\begin{array}{ccc}
@@ -283,8 +291,14 @@ To illuminate information transmission visualization with Misaka, we assume ther
 
 According to the principle of equal increase rate, it is necessary to make the output power of nodes become 1: 1: 1 while keeping the total output unchanged where economy is optimal.
 
-The consensus graph edge weight, indicating that unit 1 transfers 50\% of the output to unit 2
-
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=5cm]{PPT1.png}
+    \includegraphics[width=5cm]{PPT2.png}
+    \includegraphics[width=5cm]{PPT3.png}
+    \caption{Information transmission visualization illustrate}
+\label{fig:PPT}
+\end{figure*}
 
 \subsection{Time-series navigation}
 
