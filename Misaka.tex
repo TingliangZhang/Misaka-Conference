@@ -186,7 +186,7 @@ As the iterations approach consensus data are shown in the table~\ref{tab:Result
 
 For a non-strongly connected graph, the strongly connected component of the directed graph will produce a global error iteration result because of the unidirectionally connected nodes. It is necessary to ensure that the communication error nodes are eliminated at all times. The handshake protocol can be used to ensure the reliability of two-way communication.
 
-As an example, case 2 is a 10-node system, the values of nodes 1-10 correspond to 1-10 respectively, and the original adjacency matrix A is as shown in the table~\ref{tab:Error-A}.
+As an example, case 2 is a 10-node system, the values of nodes 1-10 correspond to 1-10 respectively, and the original adjacency matrix A is shown in the table~\ref{tab:Error-A}.
 
 \begin{table}[htbp]
     \centering
@@ -238,25 +238,26 @@ To illustrate the potential of tabletop swarm user interfaces, we present a set 
 
 \subsection{Dynamic iteration process physicalization}
 
-In the dynamic iterative visualization mode, the working surface is regarded as a two-dimensional rectangular coordinates, each Misaka car represents a generator node, and the vertical axis position of Misaka in the rectangular coordinates represents its current output, changing with each iteration. This system also simulate the communication process and perform decentralized autonomous optimization. When the number of nodes (newly added or withdrawn) or any node data changes, the system will restart dynamic iteration. 
+In the dynamic iterative visualization mode, the working surface is regarded as a two-dimensional rectangular coordinates, each Misaka represents a generator node, and the vertical axis position of Misaka in the rectangular coordinates represents its current output, changing with each iteration. This system also simulate the communication process and perform decentralized autonomous optimization. When the number of nodes (newly added or withdrawn) or any node data changes, the system will restart dynamic iteration. The initial value can be set by the position of Misaka at the beginning, also Misaka can be manually moved at any time during or after the iteration to change the value of nodes.
+
+In other words, we can interact with the algorithm, more interaction methods will be further discussed in the next section.
 
 The relationship between physical world and algorithms is shown as the table~\ref{tab:Real-Unreal}.
 
 \begin{table}[htbp]
     \centering
     \begin{tabular}{@{}ll@{}}
-    \toprule
-    physical world          & algorithms                   \\ \midrule
-    working surface         & two-dimensional rectangular coordinates \\
-    Move forward            & vertical axis \\
-    single Misaka           & node          \\
+    \hline
+    physical world          & algorithms                               \\ \hline
+    working surface         & two-dimensional rectangular coordinates  \\
+    Move forward            & vertical axis                            \\
+    single Misaka           & node                                     \\
     place new Misaka        & add new node and set initial value       \\
-    remove a Misaka         & disconnect a node               \\ \bottomrule
+    remove a Misaka         & disconnect a node                        \\ \hline
     \end{tabular}
     \caption{relationship between physical world and algorithms}
     \label{tab:Real-Unreal}
 \end{table}
-
 
 
 \subsection{Information transmission visualization}
