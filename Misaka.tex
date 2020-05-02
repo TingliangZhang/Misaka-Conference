@@ -84,7 +84,7 @@ Furthermore, as benefits, Misaka:
 
 To explain Misaka usage in real smart grid algorithm evaluation scenario, we proposed a simplified average consensus algorithm to solve some distributed economic dispatch (DED) problems based on a consensus-based information exchange architecture, in which a generator only communicates with its neighbors. The algorithm is a linear consensus protocol based on Markov chain and incremental cost consensus (ICC) method.
 
-Considering the actual situation, most complex algorithms require the central coordination node to distribute the transition matrix. The algorithm we proposed does not depend on the central node (coordinator) at the hardware level, The operation of each node is very simple, and it has been proved that this algorithm converges in a strongly connected system.
+Considering the actual situation, most complex algorithms require the central coordination node to distribute the transition matrix. The algorithm we proposed does not depend on the central node (coordinator) at the hardware level, aka completely decentralized. In addition, the operation of each node is very simple, and it has been proved that this algorithm converges in a strongly connected system.
 
 A distributed solution must be supported by a communication network that provides its information flow, i.e., each generating unit exchanges information with a subset of other units to make autonomous decisions\cite{binetti2013distributed}. The communication connections can be described by a connected graph $G=(V, E)$ where $V=\left\{\nu_{1}, \nu_{2}, \ldots, \nu_{n}\right\}$ is the set of nodes, and $E \subset V \times V$
 is the set of edges. An edge $\left(\nu_{j}, \nu_{i}\right) \in E$ from node $j$ to node $i$ exists if node $i$ can receive information from node $j$.
@@ -166,7 +166,7 @@ As the iterations approach consensus data are shown in the table~\ref{tab:Result
     \centering
     \begin{tabular}{|l|l|l|l|l|}
     \hline
-    \diagbox{Number of iterations}{$X_{i,j}$}{Node number}
+    \diagbox{Iterations No.}{$X_{i,j}$}{Node No.}
        & 0        & 1        & 2        & 3        \\ \hline
     0  & 1        & 2        & 3        & 4        \\ \hline
     1  & 1.5      & 2.5      & 2.666667 & 3        \\ \hline
@@ -183,6 +183,49 @@ As the iterations approach consensus data are shown in the table~\ref{tab:Result
     \caption{Case 1 iteration data}
     \label{tab:Result-1234}
 \end{table}
+
+For a non-strongly connected graph, the strongly connected component of the directed graph will produce a global error iteration result because of the unidirectionally connected nodes. It is necessary to ensure that the communication error nodes are eliminated at all times. The handshake protocol can be used to ensure the reliability of two-way communication.
+
+As an example, case 2 is a 10-node system, the values of nodes 1-10 correspond to 1-10 respectively, and the original adjacency matrix A is as shown in the table~\ref{tab:Error-A}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+    \hline
+    \diagbox{i}{$A_{i,j}$}{j}
+       & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+    1  & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0  \\ \hline
+    2  & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0  \\ \hline
+    3  & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1  \\ \hline
+    4  & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0  \\ \hline
+    5  & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1  \\ \hline
+    6  & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0  \\ \hline
+    7  & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1  \\ \hline
+    8  & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0  \\ \hline
+    9  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0  \\ \hline
+    10 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1  \\ \hline
+    \end{tabular}
+    \caption{Non-strongly connected graph counterexample adjacency matrix A}
+    \label{tab:Error-A}
+\end{table}
+
+Note that node 9 has no way to receive information from other nodes and becomes a strongly connected component separate from other nodes, make the entire network erroneously converge to the value of node 9, which is shown in fig~\ref{fig:123456-Error}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{123456-Error.pdf}
+    \caption{Non-strongly connected graph iteration curve}
+    \label{fig:123456-Error}
+\end{figure}
+
+After connect the directed edges from nodes 9 to 1, it will become a strongly connected system and converge normally, which is shown in fig~\ref{fig:123456-Correct}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{123456-Correct.pdf}
+    \caption{Case 2 strongly connected graph iteration curve}
+    \label{fig:123456-Correct}
+\end{figure}
 
 \section{UI examples eith Misaka}
 
