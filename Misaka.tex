@@ -104,6 +104,13 @@ Then the consensus protocol can be formulated as follows.
 
 \begin{equation}\boldsymbol{s}^{(k+1)}=\boldsymbol{Q} \boldsymbol{s}^{(k)}\end{equation}
 
+The physical meaning of the algorithm is: At the same time during each iteration, all weights connected to the node are averaged and assigned to this node.
+
+In terms of the transition matrix: each element in the $Q$ matrix is the corresponding adjacent matrix element divided by the node outdegree (the total number of edges emitted).
+
+To demonstrate the algorithm performance, we proposed two typical cases:
+
+Case 1 is a 4-node graph given in fig
 
 \section{UI examples eith Misaka}
 
