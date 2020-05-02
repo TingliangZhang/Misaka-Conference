@@ -94,6 +94,15 @@ We use the adjacency matrix A of the directed graph to describe its communicatio
     \end{array}\right.
 \end{equation}
 
+The information flow can be described by a weighted graph, whose transition matrix $Q$ are composed by communication weights:
+
+\begin{equation}
+    q_{i j}=\frac{a_{i j}}{\sum_{k=1}^{N} a_{i k}}
+\end{equation}
+
+Then the consensus protocol can be formulated as follows.
+
+\begin{equation}\boldsymbol{s}^{(k+1)}=\boldsymbol{Q} \boldsymbol{s}^{(k)}\end{equation}
 
 
 \section{UI examples eith Misaka}
