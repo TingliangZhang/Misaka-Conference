@@ -110,7 +110,25 @@ In terms of the transition matrix: each element in the $Q$ matrix is the corresp
 
 To demonstrate the algorithm performance, we proposed two typical cases:
 
-Case 1 is a 4-node graph given in fig
+Case 1 is a 4-generator directed graph given in fig~\ref{fig:Directed-graph}.
+
+\begin{figure}[htbp] % use float package if you want it here
+    \centering
+    \includegraphics{Directed-graph.pdf}
+    \caption{Case 1 4-node directed graph}
+    \label{fig:Directed-graph}
+\end{figure}
+
+The adjacency matrix A is:
+
+\begin{equation}
+    A=\left[\begin{array}{cccc}
+    {1} & {1} & {0} & {0} \\
+    {0} & {1} & {1} & {0} \\
+    {1} & {0} & {1} & {1} \\
+    {0} & {1} & {0} & {1}
+    \end{array}\right]
+\end{equation}
 
 \section{UI examples eith Misaka}
 
