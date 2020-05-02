@@ -6,6 +6,8 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
+% 定义所有的图片文件在 figures 子目录下
+\graphicspath{{figures/}}
 \usepackage{textcomp}
 \usepackage{xcolor}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
@@ -114,7 +116,7 @@ Case 1 is a 4-generator directed graph given in fig~\ref{fig:Directed-graph}.
 
 \begin{figure}[htbp] % use float package if you want it here
     \centering
-    \includegraphics{Directed-graph.pdf}
+    \includegraphics[width=0.8\columnwidth]{Directed-graph.pdf}
     \caption{Case 1 4-node directed graph}
     \label{fig:Directed-graph}
 \end{figure}
