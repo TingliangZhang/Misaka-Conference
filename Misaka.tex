@@ -76,7 +76,10 @@ Furthermore, as benefits, Misaka:
 
 \section{Test Algorithm Explanation}
 
-To explain Misaka usage in real smart grid algorithm evaluation scenario, we proposed a simplified average consensus algorithm to solve some distributed economic dispatch (DED) problems based on a consensus-based information exchange architecture, in which a generator only communicates with its neighbors.
+To explain Misaka usage in real smart grid algorithm evaluation scenario, we proposed a simplified average consensus algorithm to solve some distributed economic dispatch (DED) problems based on a consensus-based information exchange architecture, in which a generator only communicates with its neighbors. The algorithm is a linear consensus protocol based on Markov chain and incremental cost consensus (ICC) method.
+
+A distributed solution must be supported by a communication network that provides its information flow, i.e., each generating unit exchanges information with a subset of other units to make autonomous decisions\cite{binetti2013distributed}. The communication connections can be described by a connected graph $G=(V, E)$ where $V=\left\{\nu_{1}, \nu_{2}, \ldots, \nu_{n}\right\}$ is the set of nodes, and $E \subset V \times V$
+is the set of edges. An edge $\left(\nu_{j}, \nu_{i}\right) \in E$ from node $j$ to node $i$ exists if node $i$ can receive information from node $j$. 
 
 \section{UI examples eith Misaka}
 
