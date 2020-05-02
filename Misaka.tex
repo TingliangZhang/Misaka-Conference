@@ -227,9 +227,37 @@ After connect the directed edges from nodes 9 to 1, it will become a strongly co
     \label{fig:123456-Correct}
 \end{figure}
 
+
+
+
+
+
 \section{UI examples eith Misaka}
 
+To illustrate the potential of tabletop swarm user interfaces, we present a set of smart grid algorithm development application scenarios developed with Misaka.
+
 \subsection{Dynamic iteration process physicalization}
+
+In the dynamic iterative visualization mode, the working surface is regarded as a two-dimensional rectangular coordinates, each Misaka car represents a generator node, and the vertical axis position of Misaka in the rectangular coordinates represents its current output, changing with each iteration. This system also simulate the communication process and perform decentralized autonomous optimization. When the number of nodes (newly added or withdrawn) or any node data changes, the system will restart dynamic iteration. 
+
+The relationship between physical world and algorithms is shown as the table~\ref{tab:Real-Unreal}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{@{}ll@{}}
+    \toprule
+    physical world          & algorithms                   \\ \midrule
+    working surface         & two-dimensional rectangular coordinates \\
+    Move forward            & vertical axis \\
+    single Misaka           & node          \\
+    place new Misaka        & add new node and set initial value       \\
+    remove a Misaka         & disconnect a node               \\ \bottomrule
+    \end{tabular}
+    \caption{relationship between physical world and algorithms}
+    \label{tab:Real-Unreal}
+\end{table}
+
+
 
 \subsection{Information transmission visualization}
 
