@@ -81,6 +81,7 @@ Furthermore, as benefits, Misaka:
 \end{itemize}
 
 \section{Test Algorithm Explanation}
+\label{sec:Algorithm}
 
 To explain Misaka usage in real smart grid algorithm evaluation scenario, we proposed a simplified average consensus algorithm to solve some distributed economic dispatch (DED) problems based on a consensus-based information exchange architecture, in which a generator only communicates with its neighbors. The algorithm is a linear consensus protocol based on Markov chain and incremental cost consensus (ICC) method.
 
@@ -259,10 +260,15 @@ The relationship between physical world and algorithms is shown as the table~\re
     \label{tab:Real-Unreal}
 \end{table}
 
-% 在这加Illustration视频或者解释简笔画
+
+
+% 在这加Illustration摆拍以及解释简笔画，拍的视频直接传YouTube交给审稿就行了
 
 
 \subsection{Information transmission visualization}
+
+% 在这加PPT Illustration
+
 
 \subsection{Time-series navigation}
 
@@ -277,6 +283,8 @@ There are many tangible robots such as Zooids\cite{le2016zooids} and Cellulo\cit
 
 \subsection{Hardware}
 
+% 可选加个渲染图或者实物图带标签
+
 Traditional two wheels differential drive normally used on mobile robots have manoeuvrability limitations and take time to sort out\cite{ribeiro2004three}. 
 
 An Omni wheel has an axis perpendicular to the axis of the core wheel, This allows the wheels to move in two directions, Omni-wheeled robots can move at any angle in any direction, without rotating beforehand.
@@ -285,7 +293,11 @@ We use custom-designed platform with three omni-directional wheels, drvied by mi
 
 real-time high-accuracy 2D localization technique for mobile robots, based on simple printed patterns, building over algorithms previously developed for digital pens\cite{hostettler2016real}.
 
+% 可以摆拍个图片
 
+Users can modify Misaka for their applications by designing custom modules that attach to its core module or adding powerful chips and development boards to achieve more functions, such as computer vision, wifi, machine learning algorithms, etc.
+
+For example, in order to give Misaka Linux development environment and capabilities of testing machine learning algorithms, we add Nvidia Jetson Nano to Misaka core through UART. And to connect them with bluetooth and wifi, we add ESP32 modules. 
 
 \subsection{Software}
 
