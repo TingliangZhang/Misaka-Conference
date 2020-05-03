@@ -381,7 +381,7 @@ Traditional two wheels differential drive normally used on mobile robots have ma
 
 An Omni wheel has an axis perpendicular to the axis of the core wheel, This allows the wheels to move in two directions, Omni-wheeled robots can move at any angle in any direction, without rotating beforehand.
 
-We use custom-designed platform with three 38-mm-diameter omni-directional wheels, drvied by micro stepper motor to precisely control the rotation angle of each wheel.
+We use custom-designed platform with three 38-mm-diameter omni-directional wheels, drvied by micro stepper motor to precisely control the rotation angle of each wheel. Having a holonomic system allow the robots to move smoothly and easily respond to user interaction.
 
 Most of the components are 3D printed using standard PLA plastic, which allows for easy replication and modification.Currently, a Misaka takes about 3 hours to print with a JGAURORA A3S 3D printer using an infill of 20\%. We use Fusion 360 for CAD design and Ultimaker Cura for slicing. 3D Model is shown in Figure~\ref{fig:3DModel}.
 
@@ -430,12 +430,37 @@ For example, in order to give Misaka Linux development environment and capabilit
 
 \subsection{Software}
 
+control strategies: Proportional-Integral-Derivative (PID) position control
+
+XBee?
+
+
+
+
+
+
+
+
 \section{Limitations and future work}
+
+Size 
+
+Power and charging management of many robots presents
+many challenges. Currently, our system relies on individual
+chargers in which each robot must be placed manually. An automated
+system, potentially with integrated wireless charging
+coils in each robot could allow robots to charge autonomously
+when needed by returning to a charging base station.
 
 \section{Conclusion}
 
+We introduced Misaka, a visualized swarm testbed for smart grid algorithm evaluation, also a platform for developing tabletop tangible swarm interfaces.
 
+We hope that this article and Misaka platform will spur more research in smart grid distributed algorithm development and interactive testbed.
 
+All necessary material and documentation for implementing Misaka can be found at
+
+% \url{https://github.com/TingliangZhang/Misaka}
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,refs}
