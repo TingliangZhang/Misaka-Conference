@@ -329,7 +329,7 @@ We use case 1 in section~\ref{sec:Algorithm} to demonstrate this. As Figure~\ref
 
 Another example is placing Misakas on any map(or screen which display map), the location of Misaka means the correspond latitude and longitude on the map. The color of RGBLED represent scalar variable value.
 
-We use Misaka on U.S. map to visualize US airport traffic(incoming flights on February 2011) of most trafficked US airports. shown in Figure~\ref{fig:scatterplots2}
+We use Misaka on U.S. map to visualize US airport traffic(incoming flights on February 2011) of most trafficked US airports. Shown in Figure~\ref{fig:scatterplots2}
 
 \begin{figure}[htbp]
     \centering
@@ -375,11 +375,43 @@ There are many tangible robots such as Zooids\cite{le2016zooids} and Cellulo\cit
 
 % 可选加个渲染图或者实物图带标签
 
+Misakas are small custom-made robots as shown in Figure , their dimensions are 100 mm in diameter and 50 mm in height. Each robot is powered by a 450mAh 2S 7.4V LiPo battery and uses micro stepper motor driven wheels.
+
 Traditional two wheels differential drive normally used on mobile robots have manoeuvrability limitations and take time to sort out\cite{ribeiro2004three}. 
 
 An Omni wheel has an axis perpendicular to the axis of the core wheel, This allows the wheels to move in two directions, Omni-wheeled robots can move at any angle in any direction, without rotating beforehand.
 
-We use custom-designed platform with three omni-directional wheels, drvied by micro stepper motor to precisely control the rotation angle of each wheel.
+We use custom-designed platform with three 38-mm-diameter omni-directional wheels, drvied by micro stepper motor to precisely control the rotation angle of each wheel.
+
+Most of the components are 3D printed using standard PLA plastic, which allows for easy replication and modification.Currently, a Misaka takes about 3 hours to print with a JGAURORA A3S 3D printer using an infill of 20\%. We use Fusion 360 for CAD design and Ultimaker Cura for slicing. 3D Model is shown in Figure~\ref{fig:3DModel}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{3DModel.png}
+    \caption{3D Model of Misaka}
+    \label{fig:3DModel}
+\end{figure}
+
+To drive the robot, a motor driver chip (DRV8825) and three 2 phase 4 wire Stepper Gear Motor (CHS-GM1024-10BY) are used. With this combination, the robot has a maximum speed of approximately 20 cm/s.
+
+8 capacitive touch buttons which independently back-illuminated in full RGB using WS2812B are wrapped inside the 3D printed enclosure to provide capacitive touch sensing capabilities and the robot’s state display as well as full color indicating.
+
+Shown in Figure~\ref{fig:PCB}, The main processors onboard Misaka is ATmega2560-16AU 16 MHz 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{PCB.png}
+    \caption{Top-down view of the main Misaka circuit board}
+    \label{fig:PCB}
+\end{figure}
+
+Most of the power in the robots are consumed by the motors. The current draw of each robot is approximately 200 mA when the motors are stalled and 800 mA during typical use. Thus, with a 450 mAh battery, robots are capable of moving for half an hour, and can work even longer under normal usage.
+
+Each robot communicates with eachother using Digi XBee module. Mesh networking is used in our application to stimulate real smart grid communication protocol such as DigiMesh and Zigbee3.0, which RF LINE OF SIGHT RANGE can reach 2 Miles (3200 m).
+
+
+
+% However, for controllability and smoothness of the motion, the robots move at a slower average speed of 10 cm/s for our applications.
 
 real-time high-accuracy 2D localization technique for mobile robots, based on simple printed patterns, building over algorithms previously developed for digital pens\cite{hostettler2016real}.
 
@@ -387,7 +419,7 @@ real-time high-accuracy 2D localization technique for mobile robots, based on si
 
 Users can modify Misaka for their applications by designing custom modules that attach to its core module or adding powerful chips and development boards to achieve more functions, such as computer vision, wifi, machine learning algorithms, etc.
 
-For example, in order to give Misaka Linux development environment and capabilities of testing machine learning algorithms, we add Nvidia Jetson Nano to Misaka core through UART. And to connect them with bluetooth and wifi, we add ESP32 modules. 
+For example, in order to give Misaka Linux development environment and capabilities of testing machine learning algorithms, we add Nvidia Jetson Nano to Misaka core through UART for high-level control and image processing. And to connect them with bluetooth and wifi, we add ESP32 modules which also interact with Misaka through serial communication. 
 
 \subsection{Software}
 
