@@ -376,7 +376,14 @@ There are many tangible robots such as Zooids\cite{le2016zooids} and Cellulo\cit
 
 % 可选加个渲染图或者实物图带标签
 
-Misakas are small custom-made robots as shown in Figure , their dimensions are 100 mm in diameter and 50 mm in height. Each robot is powered by a 450mAh 2S 7.4V LiPo battery and uses micro stepper motor driven wheels.
+Misakas are small custom-made robots as shown in Figure~\ref{fig:model}, their dimensions are 100 mm in diameter and 50 mm in height. Each robot is powered by a 450mAh 2S 7.4V LiPo battery and uses micro stepper motor driven wheels.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{DA4A4015.JPG}
+    \caption{Misaka core model}
+    \label{fig:model}
+\end{figure}
 
 Traditional two wheels differential drive normally used on mobile robots have manoeuvrability limitations and take time to sort out\cite{ribeiro2004three}. 
 
@@ -426,6 +433,15 @@ We use SONiX OID SNM9S500C3000A Decoder SoC Module, which is a highly integrated
 % 可以摆拍个图片 Jetson NANO + MP1 + ESP32 + Misaka
 
 Users can modify Misaka for their applications by designing custom modules that attach to its core module or adding powerful chips and development boards to achieve more functions, such as computer vision, wifi, machine learning algorithms, etc.
+
+Misaka core and its compatible extensions are shown in Figure~\ref{fig:extension}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{DA4A3991.JPG}
+    \caption{Misaka core and its compatible extensions}
+    \label{fig:extension}
+\end{figure}
 
 For example, in order to give Misaka Linux development environment and capabilities of testing machine learning algorithms, we add Nvidia Jetson Nano to Misaka core through UART for high-level control and image processing. And to connect them with bluetooth and wifi, we add ESP32 modules which also interact with Misaka through serial communication. 
 
