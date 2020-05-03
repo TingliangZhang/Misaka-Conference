@@ -275,3 +275,4 @@ TSWLatexianTemp*
 *.sta
 *.pdf
 Misaka.pdf
+figures/.ipynb_checkpoints/scatterplots-checkpoint.ipynb

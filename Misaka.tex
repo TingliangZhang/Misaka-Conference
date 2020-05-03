@@ -295,7 +295,7 @@ In this example, three fixed Misakas represent nodes, and one Misaka on each dir
 
 When any data packet is sent, the corresponding Misaka of the directional edge will move to the sending node (within a certain distance that the two can communicate with each other) to receive the data packet and display it on its screen. After that, it will move towards the target node. After reaching a certain range around the target communication node, it will send the data packet to the target node, and the target node will perform a series of operations and display the process on its screen. The process is shown in fig~\ref{fig:PPT}.
 
-\begin{figure*}[t]
+\begin{figure*}[ht]
     \centering
     \includegraphics[width=5cm]{PPT1.png}
     \includegraphics[width=5cm]{PPT2.png}
@@ -308,15 +308,39 @@ When any data packet is sent, the corresponding Misaka of the directional edge w
 
 We used Misaka to visualize and navigate in time-series data.
 
-Misakas at the bottom act as widgets to let users customize the display and navigate the data. The two Misakas at the bottom specify the time range, they act like a range slider\cite{ahlberg1992dynamic}(see Figure ). For instance, moving the right Misaka to the right, the line chart will show a wider time range.
+Misakas at the right act as widgets to let users customize the display and navigate the data. The two Misakas at the right specify the time range, they act like a range slider\cite{ahlberg1992dynamic}(see Figure ). For instance, moving the right Misaka to the right, the line chart will show a wider time range.
 
 % 画一下Zooids Figure 4. A line chart visualization using zooids.
 
 \subsection{Multiple scatterplots}
 
-Scatterplots is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data\cite{Scatterplot}. 
+Scatterplots is a type of plot using Cartesian coordinates to display values for typically two variables for a set of data. 
 
-With a group of Misakas, each with RGB LED on the top, 
+Misakas with RGB LED on top can use color to represent different sets of data, or another scalar variable. Meanwhile, 
+
+We use case 1 in section~\ref{sec:Algorithm} to demonstrate this. As Figure~\ref{fig:scatterplots1} shows, Misakas’ LED color represent different data series, and the position of each Misaka tells two scalar variables. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{scatterplots1.png}
+    \caption{Multiple scatterplots visualization with Misakas}
+    \label{fig:scatterplots1}
+\end{figure}
+
+Another example is placing Misakas on any map(or screen which display map), the location of Misaka means the correspond latitude and longitude on the map. The color of RGBLED represent scalar variable value.
+
+We use Misaka on U.S. map to visualize US airport traffic(incoming flights on February 2011) of most trafficked US airports. shown in Figure~\ref{fig:scatterplots2}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{scatterplots2.png}
+    \caption{Most trafficked US airports visualization with Misakas}
+    \label{fig:scatterplots2}
+\end{figure}
+
+\section{Other possibilities}
+
+Just like surface dial.
 
 \section{Hardware and software design}
 
