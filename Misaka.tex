@@ -396,7 +396,7 @@ To drive the robot, a motor driver chip (DRV8825) and three 2 phase 4 wire Stepp
 
 8 capacitive touch buttons which independently back-illuminated in full RGB using WS2812B are wrapped inside the 3D printed enclosure to provide capacitive touch sensing capabilities and the robot’s state display as well as full color indicating.
 
-Shown in Figure~\ref{fig:PCB}, The main processors onboard Misaka is ATmega2560-16AU 16 MHz 
+The main Misaka circuit board shown in Figure~\ref{fig:PCB}, allows for robot control. The main processors onboard Misaka is a high-performance, low-power 16MHz 8-bit AVR microcontrollers(Microchip ATmega2560-16AU) combines 256KB ISP flash memory, 8KB SRAM, 4KB EEPROM, 86 general purpose I/O lines, 32 general purpose working registers, real time counter, six flexible timer/counters with compare modes, PWM, 4 USARTs, byte oriented 2-wire serial interface, 16-channel 10-bit A/D converter, and a JTAG interface for on-chip debugging. ATmega2560 manages the overall logic computation
 
 \begin{figure}[htbp]
     \centering
@@ -407,15 +407,20 @@ Shown in Figure~\ref{fig:PCB}, The main processors onboard Misaka is ATmega2560-
 
 Most of the power in the robots are consumed by the motors. The current draw of each robot is approximately 200 mA when the motors are stalled and 800 mA during typical use. Thus, with a 450 mAh battery, robots are capable of moving for half an hour, and can work even longer under normal usage.
 
-Each robot communicates with eachother using Digi XBee module. Mesh networking is used in our application to stimulate real smart grid communication protocol such as DigiMesh and Zigbee3.0, which RF LINE OF SIGHT RANGE can reach 2 Miles (3200 m).
+Each robot communicates with eachother using Digi XBee module. Mesh networking is used in our application to stimulate real smart grid communication protocol such as DigiMesh and Zigbee3.0, which RF line of sight range can reach 2 Miles (3200 m).
 
-Mesh networking is used in applications where the range between two points may be beyond the range of the two radios located at those points, but intermediate radios are in place that could forward on any messages to and from the desired radios.
+Mesh networking is used in electric grid applications where the range between two points may be beyond the range of the two radios located at those points, but intermediate radios are in place that could forward on any messages to and from the desired radios.
 
-DigiMesh is a widely deployed peer-to-peer mesh networking protocol that reduces the complexity of the ZigBee protocol for point-to-multipoint configuration. DigiMesh offers users added network stability through self-healing network operation and support for sleeping routers – extending the operational life of battery-dependent networks.
+% DigiMesh is a widely deployed peer-to-peer mesh networking protocol that reduces the complexity of the ZigBee protocol for point-to-multipoint configuration. DigiMesh offers users added network stability through self-healing network operation and support for sleeping routers – extending the operational life of battery-dependent networks.
 
 % However, for controllability and smoothness of the motion, the robots move at a slower average speed of 10 cm/s for our applications.
 
-real-time high-accuracy 2D localization technique for mobile robots, based on simple printed patterns, building over algorithms previously developed for digital pens\cite{hostettler2016real}.
+A real-time high-accuracy 2D localization tracking system for mobile robots, based on simple printed patterns, building over algorithms previously developed for digital pens similar to Hostettler\cite{hostettler2016real} is used
+for Misaka position tracking. It need a microdot pattern printed paper under Misaka to work functionally. However, we can print other pattern on this specific paper without affecting any function. Also the pattern printed paper can be made translucent to be laid on the screen or other paper.
+
+We use SONiX OID SNM9S500C3000A Decoder SoC Module, which is a highly integrated system-on-chip (SoC) module embedded CMOS Sensor and OID image decoder, to transmit location data to MCU. It plays the role of INPUT Device which is cost-effective and high performance.
+
+
 
 % 可以摆拍个图片
 
