@@ -367,11 +367,9 @@ Rotate left to make the display less bright, or right to make it brighter.
 
 
 
-\section{Hardware and software design}
+\section{Hardware design}
 
 There are many tangible robots such as Zooids\cite{le2016zooids} and Cellulo\cite{ozgur2017cellulo}. We refer to their design and carefully designed Misaka testbed according to our specific application scenario.
-
-\subsection{Hardware}
 
 % 可选加个渲染图或者实物图带标签
 
@@ -428,29 +426,19 @@ Users can modify Misaka for their applications by designing custom modules that 
 
 For example, in order to give Misaka Linux development environment and capabilities of testing machine learning algorithms, we add Nvidia Jetson Nano to Misaka core through UART for high-level control and image processing. And to connect them with bluetooth and wifi, we add ESP32 modules which also interact with Misaka through serial communication. 
 
-\subsection{Software}
 
-control strategies: Proportional-Integral-Derivative (PID) position control
+% \subsection{Software}
 
-XBee?
+% control strategies: Proportional-Integral-Derivative (PID) position control
 
-
-
+% XBee?
 
 
+% \section{Limitations and future work}
 
+% Size 
 
-
-\section{Limitations and future work}
-
-Size 
-
-Power and charging management of many robots presents
-many challenges. Currently, our system relies on individual
-chargers in which each robot must be placed manually. An automated
-system, potentially with integrated wireless charging
-coils in each robot could allow robots to charge autonomously
-when needed by returning to a charging base station.
+% Power and charging management of many robots presents many challenges. Currently, our system relies on individual chargers in which each robot must be placed manually. An automated system, potentially with integrated wireless charging coils in each robot could allow robots to charge autonomously when needed by returning to a charging base station.
 
 \section{Conclusion}
 
