@@ -314,9 +314,7 @@ When any data packet is sent, the corresponding Misaka of the directional edge w
 
 \subsection{Time-series navigation}
 
-We used Misaka to visualize and navigate in time-series data.
-
-Misakas at the right act as widgets to let users customize the display and navigate the data. The two Misakas at the right specify the time range, they act like a range slider\cite{ahlberg1992dynamic}(see Figure ). For instance, moving the right Misaka to the right, the line chart will show a wider time range.
+We used Misaka to visualize and navigate in time-series data, COVID-19 total confirmed cases worldwide for example. In Figure~\ref{fig:scatterplots1}-1, each circle represent a Misaka. Beside this plot, there are two other Misakas act as widgets to let users customize the display and navigate the data. The two Misakas specify the time range, they act like a range slider\cite{ahlberg1992dynamic}. For instance, moving those two Misakas apart, the line chart will show a wider time range.
 
 % 画一下Zooids Figure 4. A line chart visualization using zooids.
 
@@ -324,14 +322,21 @@ Misakas at the right act as widgets to let users customize the display and navig
 
 Scatterplots is a type of plot using Cartesian coordinates to display values for typically two variables for a set of data. 
 
-Misakas with RGB LED on top can use color to represent different sets of data, or another scalar variable. Meanwhile, 
+% https://ourworldindata.org/grapher/covid-cases-by-source
+% Single 
+% Total confirmed cases: https://covid.ourworldindata.org/data/ecdc/total_cases.csv
 
-We use case 1 in section~\ref{sec:Algorithm} to demonstrate this. As Figure~\ref{fig:scatterplots1} shows, Misakas’ LED color represent different data series, and the position of each Misaka tells two scalar variables. 
+
+
+Misakas with RGB LED on top can use color to represent different sets of data, or another scalar variable.
+
+We use case 1 in section~\ref{sec:Algorithm} to demonstrate this. As Figure~\ref{fig:scatterplots1}-2 shows, Misakas’ LED color represent different data series, and the position of each Misaka tells two scalar variables. 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\columnwidth]{scatterplots1.png}
-    \caption{Multiple scatterplots visualization with Misakas}
+    \includegraphics[width=0.49\columnwidth]{scatterplots02.png}
+    \includegraphics[width=0.49\columnwidth]{scatterplots01.png}
+    \caption{Single and multiple scatterplots visualization with Misakas}
     \label{fig:scatterplots1}
 \end{figure}
 
