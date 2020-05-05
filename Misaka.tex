@@ -167,50 +167,97 @@ With the iteration, the price curve of each unit is shown in Figure~\ref{fig:Res
 
 As the iterations approach consensus data are shown in the table~\ref{tab:Result-1234}.
 
+% \begin{table}[htbp]
+%     \centering
+%     \begin{tabular}{|l|l|l|l|l|}
+%     \hline
+%     \diagbox{Iterations No.}{$X_{i,j}$}{Node No.}
+%        & 0        & 1        & 2        & 3        \\ \hline
+%     0  & 1        & 2        & 3        & 4        \\ \hline
+%     1  & 1.5      & 2.5      & 2.666667 & 3        \\ \hline
+%     2  & 2        & 2.583333 & 2.388889 & 2.75     \\ \hline
+%     3  & 2.291667 & 2.486111 & 2.37963  & 2.666667 \\ \hline
+%     4  & 2.388889 & 2.43287  & 2.445988 & 2.576389 \\ \hline
+%     5  & 2.41088  & 2.439429 & 2.470422 & 2.50463  \\ \hline
+%     6  & 2.425154 & 2.454925 & 2.461977 & 2.472029 \\ \hline
+%     7  & 2.44004  & 2.458451 & 2.453054 & 2.463477 \\ \hline
+%     8  & 2.449246 & 2.455752 & 2.45219  & 2.460964 \\ \hline
+%     9  & 2.452499 & 2.453971 & 2.454133 & 2.458358 \\ \hline
+%     10 & 2.453235 & 2.454052 & 2.454997 & 2.456165 \\ \hline
+%     \end{tabular}
+%     \caption{Case 1 iteration data}
+%     \label{tab:Result-1234}
+% \end{table}
+
 \begin{table}[htbp]
     \centering
-    \begin{tabular}{|l|l|l|l|l|}
-    \hline
-    \diagbox{Iterations No.}{$X_{i,j}$}{Node No.}
-       & 0        & 1        & 2        & 3        \\ \hline
-    0  & 1        & 2        & 3        & 4        \\ \hline
-    1  & 1.5      & 2.5      & 2.666667 & 3        \\ \hline
-    2  & 2        & 2.583333 & 2.388889 & 2.75     \\ \hline
-    3  & 2.291667 & 2.486111 & 2.37963  & 2.666667 \\ \hline
-    4  & 2.388889 & 2.43287  & 2.445988 & 2.576389 \\ \hline
-    5  & 2.41088  & 2.439429 & 2.470422 & 2.50463  \\ \hline
-    6  & 2.425154 & 2.454925 & 2.461977 & 2.472029 \\ \hline
-    7  & 2.44004  & 2.458451 & 2.453054 & 2.463477 \\ \hline
-    8  & 2.449246 & 2.455752 & 2.45219  & 2.460964 \\ \hline
-    9  & 2.452499 & 2.453971 & 2.454133 & 2.458358 \\ \hline
-    10 & 2.453235 & 2.454052 & 2.454997 & 2.456165 \\ \hline
-    \end{tabular}
     \caption{Case 1 iteration data}
+    \begin{tabular}{lllll}
+    \hline
+    \hline
+    $X_{i,j}$   & 0        & 1        & 2        & 3        \\ \hline
+    0  & 1        & 2        & 3        & 4        \\ 
+    1  & 1.5      & 2.5      & 2.666667 & 3        \\ 
+    2  & 2        & 2.583333 & 2.388889 & 2.75     \\ 
+    3  & 2.291667 & 2.486111 & 2.37963  & 2.666667 \\ 
+    4  & 2.388889 & 2.43287  & 2.445988 & 2.576389 \\ 
+    5  & 2.41088  & 2.439429 & 2.470422 & 2.50463  \\ 
+    6  & 2.425154 & 2.454925 & 2.461977 & 2.472029 \\ 
+    7  & 2.44004  & 2.458451 & 2.453054 & 2.463477 \\ 
+    8  & 2.449246 & 2.455752 & 2.45219  & 2.460964 \\ 
+    9  & 2.452499 & 2.453971 & 2.454133 & 2.458358 \\ 
+    10 & 2.453235 & 2.454052 & 2.454997 & 2.456165 \\ 
+    \hline
+    \hline
+    \end{tabular}
     \label{tab:Result-1234}
 \end{table}
 
 For a non-strongly connected graph, the strongly connected component of the directed graph will produce a global error iteration result because of the unidirectionally connected nodes. It is necessary to ensure that the communication error nodes are eliminated at all times. The handshake protocol can be used to ensure the reliability of two-way communication.
 
-As an example, case 2 is a 10-node system, the values of nodes 1-10 correspond to 1-10 respectively, and the original adjacency matrix A is shown in the table~\ref{tab:Error-A}.
+As an example, case 2 is a 10-node system, the values of nodes 1-10 correspond to 1-10 respectively, and the original non-strongly connected graph adjacency matrix A is shown in the table~\ref{tab:Error-A}.
+
+% \begin{table}[htbp]
+%     \centering
+%     \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+%     \hline
+%     \diagbox{i}{$A_{i,j}$}{j}
+%        & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+%     1  & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0  \\ \hline
+%     2  & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0  \\ \hline
+%     3  & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1  \\ \hline
+%     4  & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0  \\ \hline
+%     5  & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1  \\ \hline
+%     6  & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0  \\ \hline
+%     7  & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1  \\ \hline
+%     8  & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0  \\ \hline
+%     9  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0  \\ \hline
+%     10 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1  \\ \hline
+%     \end{tabular}
+%     \caption{Non-strongly connected graph counterexample adjacency matrix A}
+%     \label{tab:Error-A}
+% \end{table}
 
 \begin{table}[htbp]
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+    \caption{Original adjacency matrix A}
+    \begin{tabular}{lllllllllll}
     \hline
-    \diagbox{i}{$A_{i,j}$}{j}
-       & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
-    1  & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0  \\ \hline
-    2  & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0  \\ \hline
-    3  & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1  \\ \hline
-    4  & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0  \\ \hline
-    5  & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1  \\ \hline
-    6  & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0  \\ \hline
-    7  & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1  \\ \hline
-    8  & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0  \\ \hline
-    9  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0  \\ \hline
-    10 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1  \\ \hline
+    \hline
+    $A_{i,j}$   & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+    1  & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0  \\
+    2  & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0  \\
+    3  & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1  \\
+    4  & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0  \\
+    5  & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1  \\
+    6  & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0  \\
+    7  & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1  \\
+    8  & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0  \\
+    9  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0  \\
+    10 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1  \\
+    \hline
+    \hline
     \end{tabular}
-    \caption{Non-strongly connected graph counterexample adjacency matrix A}
     \label{tab:Error-A}
 \end{table}
 
