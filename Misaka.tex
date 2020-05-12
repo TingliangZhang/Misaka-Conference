@@ -22,7 +22,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Misaka: Interactive Swarm Testbed for Smart Grid Distributed Algorithm Development Test and Evaluation\\}
+\title{Misaka: Interactive Swarm Testbed for Smart Grid Distributed Algorithm Test and Evaluation\\}
 
 \author{\IEEEauthorblockN{1\textsuperscript{st} Tingliang Zhang}
 \IEEEauthorblockA{\textit{Dept. Electrical Engineering} \\
@@ -40,21 +40,21 @@ zhonghw@tsinghua.edu.cn}
 \IEEEauthorblockA{\textit{Dept. Electrical Engineering} \\
 \textit{Tsinghua University}\\
 Beijing, China \\
-@mails.tsinghua.edu.cn}
+}
 \and
 \IEEEauthorblockN{4\textsuperscript{nd} Xinfei Yan}
 \IEEEauthorblockA{\textit{Dept. Electrical Engineering} \\
 \textit{Tsinghua University}\\
 Beijing, China \\
-@mails.tsinghua.edu.cn}
+}
 }
 
 \maketitle
 
 \begin{abstract}
-    In this article, we present Misaka, a visualized swarm testbed for smart grid algorithm evaluation, also an extendable open-source open-hardware platform for developing tabletop tangible swarm interfaces.
+    In this paper, we present Misaka, a visualized swarm testbed for smart grid algorithm evaluation, also an extendable open-source open-hardware platform for developing tabletop tangible swarm interfaces.
 
-    The platform consists of a collection of custom-designed 3 omni-directional wheels robots each 10 cm in diameter, high accuracy localization through a microdot pattern overlaid on top of the activity sheets, and a software framework for application development and control, while remaining affordable (per unit cost about 30 USD at the prototype stage). We illustrate the potential of tabletop swarm user interfaces through a set of smart grid algorithm development application scenarios developed with Misaka.
+    The platform consists of a collection of custom-designed 3 omni-directional wheels robots each 10 cm in diameter, high accuracy localization through a microdot pattern overlaid on top of the activity sheets, and a software framework for application development and control, while remaining affordable (per unit cost about 30 USD at the prototype stage). We illustrate the potential of tabletop swarm user interfaces through a set of smart grid algorithm application scenarios developed with Misaka.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -65,11 +65,11 @@ Beijing, China \\
 
 Most recently, an increasing penetration of distributed energy resources (DERs) in Energy Internet imposes great challenges to conventional centralized economic dispatch\cite{yan2019consensus}.
 
-The centralized controller requires a high-bandwidth communication infrastructure and a high level of connectivity, poses reliability concerns due to the presence of a single point-of-failure, and is prone to modeling error. Moreover, both the future power grid and the communication network are likely to have a variable topology, which further undermines the efficacy of centralized mechanisms\cite{binetti2013distributed}.
+The centralized controller requires a high-bandwidth communication infrastructure and a high level of connectivity, poses reliability concerns, and is prone to modeling errors. Moreover, both the future power grid and the communication network are likely to have a variable topology, which further undermines the efficacy of centralized mechanisms\cite{binetti2013distributed}.
 
 In the smart grid environment, the decision-making procedures are moving from centralized to distributed frameworks\cite{yang2011communication}.
 
-But distributed algorithms are relatively difficult to understand, and need communication test to determine feasibility in real hardware scenario. So we present a swarm testbed to visualize and evaluate the algorithm and communication design of those newly proposed distributed frameworks for smart grid. A Misaka is a hardware and software system: a small omni-wheel robot with position sensing capabilities that can be freely arranged and repositioned on any horizontal surface, both through user manipulation and computer control. 
+But distributed algorithms are relatively difficult to understand, and need communication test to determine feasibility in a real hardware scenario. So we present a swarm testbed to visualize and evaluate the algorithm and communication design of those newly proposed distributed frameworks for smart grid. A Misaka is a hardware and software system: a small omni-wheel robot with position sensing capabilities that can be freely arranged and repositioned on any horizontal surface, both through user manipulation and computer control. 
 
 Due to Misakas’ ability to quickly and freely reconfigure themselves spatially, a collection of Misakas can act as a display and can provide meaningful user output such as multiple scatterplots and line charts. Due to their ability to sense user actions, Misakas can also support rich input. For example, users can move or rotate Misakas to change parameter and manipulate others Misakas.The system is relatively lightweight and only requires any surface, such as a sheet of paper or a game board, with simple printed structured patterns for real-time high-accuracy 2D localization.
 
@@ -79,7 +79,7 @@ In summary, our contributions are:
 
 \begin{itemize}
     \item The first open-source hardware/software platform for smart grid algorithm evaluation with tabletop swarm user interfaces
-    \item Redefinition for Algorithm Visualization with several implemented examples
+    \item Redefinition for algorithm visualization with several implemented examples
     \item A set of scenarios to illustrate the unprecedented possibilities offered by Misaka swarm and by tabletop swarm user interfaces in general
     \item A common platform for any algorithm visualization, and other interactive swarm user interfaces
 \end{itemize}
@@ -87,7 +87,7 @@ In summary, our contributions are:
 Furthermore, as benefits, Misaka:
 
 \begin{itemize}
-    \item are modular each unit, can be extended with powerful platform, such as NVIDIA Jetson NANO.
+    \item are modular, can be extended with powerful platform, such as NVIDIA Jetson NANO.
     \item can simulate real smart grid communication scenarios with Zigbee modular on board
     \item can interact with user moving and turning the robot or using the illuminated capacitive touch keys on the robot 
     \item can be manipulated either individually or collectively
@@ -99,9 +99,9 @@ Furthermore, as benefits, Misaka:
 \section{Test Algorithm Explanation}
 \label{sec:Algorithm}
 
-To explain Misaka usage in real smart grid algorithm evaluation scenario, we proposed a simplified average consensus algorithm to solve some distributed economic dispatch (DED) problems based on a consensus-based information exchange architecture, in which a generator only communicates with its neighbors. The algorithm is a linear consensus protocol based on Markov chain and incremental cost consensus (ICC) method.
+To explain Misaka usage in smart grid algorithm evaluation scenario, we propose a simplified average consensus algorithm to solve some distributed economic dispatch (DED) problems based on a consensus-based information exchange architecture, in which a generator only communicates with its neighbors. The algorithm is a linear consensus protocol based on Markov chain and incremental cost consensus (ICC) method.
 
-Considering the actual situation, most complex algorithms require the central coordination node to distribute the transition matrix. The algorithm we proposed does not depend on the central node (coordinator) at the hardware level, aka completely decentralized. In addition, the operation of each node is very simple, and it has been proved that this algorithm converges in a strongly connected system.
+Considering the actual situation, most complex algorithms require a central coordination node to distribute the transition matrix. The algorithm we propose does not depend on the central node (coordinator) at the hardware level, aka completely decentralized. In addition, the operation of each node is very simple, and it has been proved that this algorithm converges in a strongly connected system.
 
 A distributed solution must be supported by a communication network that provides its information flow, i.e., each generating unit exchanges information with a subset of other units to make autonomous decisions\cite{binetti2013distributed}. The communication connections can be described by a connected graph $G=(V, E)$ where $V=\left\{\nu_{1}, \nu_{2}, \ldots, \nu_{n}\right\}$ is the set of nodes, and $E \subset V \times V$
 is the set of edges. An edge $\left(\nu_{j}, \nu_{i}\right) \in E$ from node $j$ to node $i$ exists if node $i$ can receive information from node $j$.
@@ -129,18 +129,18 @@ Then the consensus protocol can be formulated as follows.
 
 \begin{equation}\boldsymbol{s}^{(k+1)}=\boldsymbol{Q} \boldsymbol{s}^{(k)}\end{equation}
 
-The physical meaning of the algorithm is: At the same time during each iteration, all weights connected to the node are averaged and assigned to this node.
+The physical meaning of the algorithm is: at the same time during each iteration, all weights connected to the node are averaged and assigned to this node.
 
 In terms of the transition matrix: each element in the $Q$ matrix is the corresponding adjacent matrix element divided by the node outdegree (the total number of edges emitted).
 
-To demonstrate the algorithm performance, we proposed two typical cases:
+To demonstrate the algorithm performance, we propose two typical cases:
 
-Case 1 is a 4-generator directed graph given in fig~\ref{fig:Directed-graph}.
+Case 1 is a 4-generator directed graph given in Fig~\ref{fig:Directed-graph}.
 
 \begin{figure}[htbp] % use float package if you want it here
     \centering
     \includegraphics[width=0.6\columnwidth]{Directed-graph.pdf}
-    \caption{Case 1 4-node directed graph}
+    \caption{4-node directed graph}
     \label{fig:Directed-graph}
 \end{figure}
 
@@ -166,9 +166,7 @@ The transition matrix is:
     \end{array}\right]
 \end{equation}
 
-Take an initial value of 1, 2, 3, 4 and iterate 10 times:
-
-With the iteration, the price curve of each unit is shown in Figure~\ref{fig:Result-1234}.
+Iterate 10 times with the initial values 1, 2, 3, 4. With the iteration, the price curve of each unit is shown in Fig~\ref{fig:Result-1234}.
 
 \begin{figure}[htbp]
     \centering
@@ -177,7 +175,7 @@ With the iteration, the price curve of each unit is shown in Figure~\ref{fig:Res
     \label{fig:Result-1234}
 \end{figure}
 
-As the iterations approach consensus data are shown in the table~\ref{tab:Result-1234}.
+As the iterations approach consensus data are shown in Table~\ref{tab:Result-1234}. In $X_{i,j}$, $i$ is number of iterations and $j$ is node number.
 
 % \begin{table}[htbp]
 %     \centering
@@ -227,7 +225,22 @@ As the iterations approach consensus data are shown in the table~\ref{tab:Result
 
 For a non-strongly connected graph, the strongly connected component of the directed graph will produce a global error iteration result because of the unidirectionally connected nodes. It is necessary to ensure that the communication error nodes are eliminated at all times. The handshake protocol can be used to ensure the reliability of two-way communication.
 
-As an example, case 2 is a 10-node system, the values of nodes 1-10 correspond to 1-10 respectively, and the original non-strongly connected graph adjacency matrix A is shown in the table~\ref{tab:Error-A}.
+As an example, Case 2 is a 10-node system, the values of nodes 1-10 correspond to 1-10 respectively, and the original non-strongly connected graph adjacency matrix A is :
+
+\begin{equation}
+    A=\left(\begin{array}{cccccccccc}
+    1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0 \\
+    0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 \\
+    1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+    0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 \\
+    0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1
+    \end{array}\right)
+\end{equation}
 
 % \begin{table}[htbp]
 %     \centering
@@ -250,30 +263,30 @@ As an example, case 2 is a 10-node system, the values of nodes 1-10 correspond t
 %     \label{tab:Error-A}
 % \end{table}
 
-\begin{table}[htbp]
-    \centering
-    \caption{Original adjacency matrix A}
-    \begin{tabular}{lllllllllll}
-    \hline
-    \hline
-    $A_{i,j}$   & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
-    1  & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0  \\
-    2  & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0  \\
-    3  & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1  \\
-    4  & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0  \\
-    5  & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1  \\
-    6  & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0  \\
-    7  & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1  \\
-    8  & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0  \\
-    9  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0  \\
-    10 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1  \\
-    \hline
-    \hline
-    \end{tabular}
-    \label{tab:Error-A}
-\end{table}
+% \begin{table}[htbp]
+%     \centering
+%     \caption{Original adjacency matrix A}
+%     \begin{tabular}{lllllllllll}
+%     \hline
+%     \hline
+%     $A_{i,j}$   & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+%     1  & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0  \\
+%     2  & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0  \\
+%     3  & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1  \\
+%     4  & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0  \\
+%     5  & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1  \\
+%     6  & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0  \\
+%     7  & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1  \\
+%     8  & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0  \\
+%     9  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0  \\
+%     10 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1  \\
+%     \hline
+%     \hline
+%     \end{tabular}
+%     \label{tab:Error-A}
+% \end{table}
 
-Note that node 9 has no way to receive information from other nodes and becomes a strongly connected component separate from other nodes, make the entire network erroneously converge to the value of node 9, which is shown in fig~\ref{fig:123456-Error}.
+Note that node 9 has no way to receive information from other nodes and becomes a strongly connected component separated from other nodes, make the entire network erroneously converge to the value of node 9, which is shown in Fig~\ref{fig:123456-Error}.
 
 \begin{figure}[htbp]
     \centering
@@ -282,7 +295,7 @@ Note that node 9 has no way to receive information from other nodes and becomes 
     \label{fig:123456-Error}
 \end{figure}
 
-After connect the directed edges from nodes 9 to 1, it will become a strongly connected system and converge normally, which is shown in fig~\ref{fig:123456-Correct}.
+After connecting the directed edges from nodes 9 to 1, it will become a strongly connected system and converge normally, which is shown in Fig~\ref{fig:123456-Correct}.
 
 \begin{figure}[htbp]
     \centering
@@ -296,37 +309,40 @@ After connect the directed edges from nodes 9 to 1, it will become a strongly co
 
 
 
-\section{UI examples eith Misaka}
+\section{UI design with Misaka}
 
 To illustrate the potential of tabletop swarm user interfaces, we present a set of smart grid algorithm development application scenarios developed with Misaka.
 
 \subsection{Dynamic iteration process physicalization}
 
-In the dynamic iterative visualization mode, the working surface is regarded as a two-dimensional rectangular coordinates, each Misaka represents a generator node, and the vertical axis position of Misaka in the rectangular coordinates represents its current output, changing with each iteration. This system also simulate the communication process and perform decentralized autonomous optimization. When the number of nodes (newly added or withdrawn) or any node data changes, the system will restart dynamic iteration. The initial value can be set by the position of Misaka at the beginning, also Misaka can be manually moved at any time during or after the iteration to change the value of nodes. The sketch map of dynamic iterative visualization is shown in Figure~\ref{fig:iteration}. 
+In the dynamic iterative visualization mode, the working surface is regarded as a two-dimensional rectangular coordinates. Each Misaka represents a generator node, and the vertical axis position of Misaka in the rectangular coordinates represents its current output, changing with each iteration. This system also simulate the communication process and perform decentralized autonomous optimization. When the number of nodes (newly added or withdrawn) or any node data changes, the system will restart dynamic iteration. The initial value can be set by the position of Misaka at the beginning, also Misaka can be manually moved at any time during or after the iteration to change the value of nodes. The sketch map of dynamic iterative visualization is shown in Fig~\ref{fig:iteration}. 
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\columnwidth]{IMG_0315.JPG}
-    \caption{Dynamic iteration process physicalization}
+    \caption{Interactive dynamic iteration}
     \label{fig:iteration}
 \end{figure}
 
 In other words, we can interact with the algorithm, more interaction methods will be further discussed in the next section.
 
-The relationship between physical world and algorithms is shown as the table~\ref{tab:Real-Unreal}.
+The relationship between physical world and algorithms is shown as Table~\ref{tab:Real-Unreal}.
 
 \begin{table}[htbp]
     \centering
+    \caption{Relationship between physical world and algorithms}
     \begin{tabular}{@{}ll@{}}
+    \hline
     \hline
     physical world          & algorithms                               \\ \hline
     working surface         & two-dimensional rectangular coordinates  \\
-    Move forward            & vertical axis                            \\
-    single Misaka           & node                                     \\
+    move forward            & vertical axis                            \\
+    a Misaka                & a node                                   \\
     place new Misaka        & add new node and set initial value       \\
-    remove a Misaka         & disconnect a node                        \\ \hline
+    remove a Misaka         & disconnect a node                        \\ 
+    \hline
+    \hline
     \end{tabular}
-    \caption{relationship between physical world and algorithms}
     \label{tab:Real-Unreal}
 \end{table}
 
@@ -337,7 +353,7 @@ The relationship between physical world and algorithms is shown as the table~\re
 
 % 在这加PPT Illustration
 
-Misakas with LCD display above can serve as communication procedures visualization platform. Some Misakas representing nodes show current parameter values and calculate process on the LCD screen. Others transmit data on edges as messengers, whose display present carried packages.
+Misakas with LCD display above can serve as a communication procedures visualization platform. Some Misakas representing nodes show current parameter values and calculate process on the LCD screen. Others transmit data on edges as messengers, whose screen presents carried packages.
 
 \begin{figure}[htbp]
     \centering
@@ -346,7 +362,7 @@ Misakas with LCD display above can serve as communication procedures visualizati
     \label{fig:PPT0}
 \end{figure}
 
-To illuminate information transmission visualization with Misaka, we assume there is a 3-node system, which is shown in fig~\ref{fig:PPT0}. The initial output is random, assuming 5MW, 2MW, and 1MW. And the transition matrix Q is:
+To illuminate information transmission visualization with Misaka, we assume there is a 3-node system, which is shown in Fig~\ref{fig:PPT0}. The initial output is random, assuming 5MW, 2MW, and 1MW. And the transition matrix Q is:
 
 \begin{equation}
     Q=\left[\begin{array}{ccc}
@@ -356,24 +372,24 @@ To illuminate information transmission visualization with Misaka, we assume ther
     \end{array}\right]
 \end{equation}
 
-According to the principle of equal increase rate, it is necessary to make the output power of nodes become 1: 1: 1 while keeping the total output unchanged where economy is optimal.
+According to the principle of equal incremental rate, it is necessary to make the output power of nodes become 1: 1: 1 while keeping the total output unchanged where economy is optimal.
 
 In this example, three fixed Misakas represent nodes, and one Misaka on each directional edge represents a data packet transmitted by the communication protocol.
 
-When any data packet is sent, the corresponding Misaka of the directional edge will move to the sending node (within a certain distance that the two can communicate with each other) to receive the data packet and display it on its screen. After that, it will move towards the target node. After reaching a certain range around the target communication node, it will send the data packet to the target node, which will perform a series of operations and display the process on its screen. The process is shown in fig~\ref{fig:PPT}.
+When any data packet is sent, the corresponding Misaka of the directional edge will move to the sending node (within a certain distance that the two can communicate with each other) to receive the data packet and display it on its screen. After that, it will move towards the target node. After reaching a certain range around the target communication node, it will send the data packet to the target node, which will perform a series of operations and display the process on its screen. The process is shown in Fig~\ref{fig:PPT}.
 
 \begin{figure*}[ht]
     \centering
     \includegraphics[width=5cm]{PPT1.png}
     \includegraphics[width=5cm]{PPT2.png}
     \includegraphics[width=5cm]{PPT3.png}
-    \caption{Information transmission visualization illustrate}
+    \caption{Information transmission visualization}
 \label{fig:PPT}
 \end{figure*}
 
 \subsection{Time-series navigation}
 
-We used Misaka to visualize and navigate in time-series data, COVID-19 total confirmed cases worldwide for example. In Figure~\ref{fig:scatterplots1}-1, each circle represent a Misaka. Beside this plot, there are two other Misakas act as widgets to let users customize the display and navigate the data. The two Misakas specify the time range, they act like a range slider\cite{ahlberg1992dynamic}. For instance, moving those two Misakas apart, the line chart will show a wider time range.
+We use Misaka to visualize and navigate in time-series data, COVID-19 total confirmed cases worldwide for example. In Fig~\ref{fig:scatterplots1}-1, each circle represent a Misaka. Beside this plot, there are two other Misakas act as widgets to let users customize the display and navigate the data. The two Misakas specify the time range, they act like a range slider\cite{ahlberg1992dynamic}. For instance, moving those two Misakas apart, the line chart will show a wider time range.
 
 % 画一下Zooids Figure 4. A line chart visualization using zooids.
 
@@ -389,7 +405,7 @@ Scatterplots is a type of plot using Cartesian coordinates to display values for
 
 Misakas with RGB LED on top can use color to represent different sets of data, or another scalar variable.
 
-We use case 1 in section~\ref{sec:Algorithm} to demonstrate this. As Figure~\ref{fig:scatterplots1}-2 shows, Misakas’ LED color represent different data series, and the position of each Misaka tells two scalar variables. 
+We use Case 1 in Section~\ref{sec:Algorithm} to demonstrate this. As Figure~\ref{fig:scatterplots1}-2 shows, Misakas’ LED color represents different data series, and the position of each Misaka tells two scalar variables. 
 
 \begin{figure}[htbp]
     \centering
@@ -399,9 +415,9 @@ We use case 1 in section~\ref{sec:Algorithm} to demonstrate this. As Figure~\ref
     \label{fig:scatterplots1}
 \end{figure}
 
-Another example is placing Misakas on any map(or screen which display map), the location of Misaka means the correspond latitude and longitude on the map. The color of RGBLED represent scalar variable value.
+Another example is placing Misakas on any map(or screen which display map), the location of Misaka means the correspond latitude and longitude on the map. The color of RGB LED represents scalar variable value.
 
-We use Misaka on U.S. map to visualize US airport traffic(incoming flights on February 2011) of most trafficked US airports. Shown in Figure~\ref{fig:scatterplots2}
+We use Misaka on U.S. map to visualize US airport traffic(incoming flights on February 2011) of most trafficked US airports. Shown in Fig~\ref{fig:scatterplots2}.
 
 \begin{figure}[htbp]
     \centering
@@ -445,7 +461,7 @@ There are many tangible robots such as Zooids\cite{le2016zooids} and Cellulo\cit
 
 % 可选加个渲染图或者实物图带标签
 
-Misakas are small custom-made robots as shown in Figure~\ref{fig:model}, their dimensions are 100 mm in diameter and 50 mm in height. Each robot is powered by a 450mAh 2S 7.4V LiPo battery and uses micro stepper motor driven wheels.
+Misakas are small custom-made robots as shown in Fig~\ref{fig:model}, their dimensions are 100 mm in diameter and 50 mm in height. Each robot is powered by a 450mAh 2S 7.4V LiPo battery and uses micro stepper motor driven wheels.
 
 \begin{figure}[htbp]
     \centering
@@ -456,11 +472,11 @@ Misakas are small custom-made robots as shown in Figure~\ref{fig:model}, their d
 
 Traditional two wheels differential drive normally used on mobile robots have manoeuvrability limitations and take time to sort out\cite{ribeiro2004three}. 
 
-An Omni wheel has an axis perpendicular to the axis of the core wheel, This allows the wheels to move in two directions, Omni-wheeled robots can move at any angle in any direction, without rotating beforehand.
+An Omni wheel has an axis perpendicular to the axis of the core wheel. This allows the wheels to move in two directions. Omni-wheeled robots can move at any angle in any direction, without rotating beforehand.
 
-We use custom-designed platform with three 38-mm-diameter omni-directional wheels, drvied by micro stepper motor to precisely control the rotation angle of each wheel. Having a holonomic system allow the robots to move smoothly and easily respond to user interaction.
+We use custom-designed platform with three 38-mm-diameter omni-directional wheels, drvied by micro stepper motors to precisely control the rotation angle of each wheel. Having a holonomic system allow the robots to move smoothly and easily respond to user interaction.
 
-Most of the components are 3D printed using standard PLA plastic, which allows for easy replication and modification.Currently, a Misaka takes about 3 hours to print with a JGAURORA A3S 3D printer using an infill of 20\%. We use Fusion 360 for CAD design and Ultimaker Cura for slicing. 3D Model is shown in Figure~\ref{fig:3DModel}.
+Most of the components are 3D printed using PLA(Polylactic Acid), which allows for easy replication and modification. Currently, a Misaka takes about 3 hours to print with a JGAURORA A3S 3D printer using an infill of 20\%. We use Fusion 360 for CAD design and Ultimaker Cura for slicing. 3D Model is shown in Fig~\ref{fig:3DModel}.
 
 \begin{figure}[htbp]
     \centering
@@ -473,7 +489,7 @@ To drive the robot, a motor driver chip (DRV8825) and three 2 phase 4 wire Stepp
 
 8 capacitive touch buttons which independently back-illuminated in full RGB using WS2812B are wrapped inside the 3D printed enclosure to provide capacitive touch sensing capabilities and the robot’s state display as well as full color indicating.
 
-The main Misaka circuit board shown in Figure~\ref{fig:PCB}, allows for robot control. The main processors onboard Misaka is a high-performance, low-power 16MHz 8-bit AVR microcontrollers(Microchip ATmega2560-16AU) combines 256KB ISP flash memory, 8KB SRAM, 4KB EEPROM, 86 general purpose I/O lines, 32 general purpose working registers, real time counter, six flexible timer/counters with compare modes, PWM, 4 USARTs, byte oriented 2-wire serial interface, 16-channel 10-bit A/D converter, and a JTAG interface for on-chip debugging. ATmega2560 manages the overall logic computation
+The main Misaka circuit board shown in Fig~\ref{fig:PCB}, allows for robot control. The main processors onboard Misaka is a high-performance, low-power 16MHz 8-bit AVR microcontrollers(Microchip ATmega2560-16AU) that combines 256KB ISP flash memory, 8KB SRAM, 4KB EEPROM, 86 general purpose I/O lines, 32 general purpose working registers, real time counter, six flexible timer/counters with compare modes, PWM, 4 USARTs, byte oriented 2-wire serial interface, 16-channel 10-bit A/D converter, and a JTAG interface for on-chip debugging. ATmega2560 manages the overall logic computation.
 
 \begin{figure}[htbp]
     \centering
@@ -484,7 +500,7 @@ The main Misaka circuit board shown in Figure~\ref{fig:PCB}, allows for robot co
 
 Most of the power in the robots are consumed by the motors. The current draw of each robot is approximately 200 mA when the motors are stalled and 800 mA during typical use. Thus, with a 450 mAh battery, robots are capable of moving for half an hour, and can work even longer under normal usage.
 
-Each robot communicates with eachother using Digi XBee module. Mesh networking is used in our application to stimulate real smart grid communication protocol such as DigiMesh and Zigbee3.0, which RF line of sight range can reach 2 Miles (3200 m).
+Each robot communicates with each other using Digi XBee module. Mesh networking is used in our application to stimulate smart grid communication protocol such as DigiMesh and Zigbee3.0, which RF line of sight range can reach 2 miles.
 
 Mesh networking is used in electric grid applications where the range between two points may be beyond the range of the two radios located at those points, but intermediate radios are in place that could forward on any messages to and from the desired radios.
 
@@ -495,15 +511,13 @@ Mesh networking is used in electric grid applications where the range between tw
 A real-time high-accuracy 2D localization tracking system for mobile robots, based on simple printed patterns, building over algorithms previously developed for digital pens similar to Hostettler\cite{hostettler2016real} is used
 for Misaka position tracking. It need a microdot pattern printed paper under Misaka to work functionally. However, we can print other pattern on this specific paper without affecting any function. Also the pattern printed paper can be made translucent to be laid on the screen or other paper.
 
-We use SONiX OID SNM9S500C3000A Decoder SoC Module, which is a highly integrated system-on-chip (SoC) module embedded CMOS Sensor and OID image decoder, to transmit location data to MCU. It plays the role of INPUT Device which is cost-effective and high performance.
-
-
+We use SONiX OID SNM9S500C3000A Decoder SoC Module, which is a highly integrated system-on-chip (SoC) module embedded CMOS Sensor and OID image decoder, to transmit location data to MCU.
 
 % 可以摆拍个图片 Jetson NANO + MP1 + ESP32 + Misaka
 
 Users can modify Misaka for their applications by designing custom modules that attach to its core module or adding powerful chips and development boards to achieve more functions, such as computer vision, wifi, machine learning algorithms, etc.
 
-Misaka core and its compatible extensions are shown in Figure~\ref{fig:extension}
+Misaka core and its compatible extensions are shown in Fig~\ref{fig:extension}
 
 \begin{figure}[htbp]
     \centering
@@ -532,7 +546,7 @@ For example, in order to give Misaka Linux development environment and capabilit
 
 We introduced Misaka, a visualized swarm testbed for smart grid algorithm evaluation, also a platform for developing tabletop tangible swarm interfaces.
 
-We hope that this article and Misaka platform will spur more research in smart grid distributed algorithm development and interactive testbed.
+We hope that this paper and Misaka platform will spur more research in smart grid distributed algorithm development and interactive testbed.
 
 All necessary material and documentation for implementing Misaka can be found at
 
