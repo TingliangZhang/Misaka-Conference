@@ -23,7 +23,8 @@
 \begin{document}
 
 \title{Misaka: Interactive Swarm Testbed for Smart Grid Distributed Algorithm Test and Evaluation\\
-\thanks{This work was supported in part by National Natural Science Foundation of China (No. 51777102), in part by National Training Program of Innovation and Entrepreneurship for Undergraduates.}
+\thanks{This work was supported in part by National Natural Science Foundation of China (No. 51777102), in part by National Training Program of Innovation and Entrepreneurship for Undergraduates. The authors wish to express their deep appreciation and gratitude to Professor Haipeng Mi, Yu Peng, Hua Tong and other colleagues in Future Lab, Tsinghua University for their guidance. The authors are also very grateful to Yihan Jia for her modification of this paper.
+}
 }
 
 \author{\IEEEauthorblockN{Tingliang Zhang}
@@ -54,9 +55,7 @@ Beijing, China \\
 \maketitle
 
 \begin{abstract}
-    In this paper, we present Misaka, a visualized swarm testbed for smart grid algorithm evaluation, also an extendable open-source open-hardware platform for developing tabletop tangible swarm interfaces.
-
-    The platform consists of a collection of custom-designed 3 omni-directional wheels robots each 10 cm in diameter, high accuracy localization through a microdot pattern overlaid on top of the activity sheets, and a software framework for application development and control, while remaining affordable (per unit cost about 30 USD at the prototype stage). We illustrate the potential of tabletop swarm user interfaces through a set of smart grid algorithm application scenarios developed with Misaka.
+    In this paper, we present Misaka, a visualized swarm testbed for smart grid algorithm evaluation, also an extendable open-source open-hardware platform for developing tabletop tangible swarm interfaces. The platform consists of a collection of custom-designed 3 omni-directional wheels robots each 10 cm in diameter, high accuracy localization through a microdot pattern overlaid on top of the activity sheets, and a software framework for application development and control, while remaining affordable (per unit cost about 30 USD at the prototype stage). We illustrate the potential of tabletop swarm user interfaces through a set of smart grid algorithm application scenarios developed with Misaka.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -73,7 +72,7 @@ In the smart grid environment, the decision-making procedures are moving from ce
 
 But distributed algorithms are relatively difficult to understand, and need communication test to determine feasibility in a real hardware scenario. So we present a swarm testbed to visualize and evaluate the algorithm and communication design of those newly proposed distributed frameworks for smart grid. A Misaka is a hardware and software system: a small omni-wheel robot with position sensing capabilities that can be freely arranged and repositioned on any horizontal surface, both through user manipulation and computer control. 
 
-Due to Misakas’ ability to quickly and freely reconfigure themselves spatially, a collection of Misakas can act as a display and can provide meaningful user output such as multiple scatterplots and line charts. Due to their ability to sense user actions, Misakas can also support rich input. For example, users can move or rotate Misakas to change parameter and manipulate others Misakas.The system is relatively lightweight and only requires any surface, such as a sheet of paper or a game board, with simple printed structured patterns for real-time high-accuracy 2D localization.
+Due to Misakas’ ability to quickly and freely reconfigure themselves spatially, a collection of Misakas can act as a display and can provide meaningful user output such as multiple scatterplots and line charts. Due to their ability to sense user actions, Misakas can also support rich input. For example, users can move or rotate Misakas to change parameter and manipulate others Misakas.The system is relatively lightweight and only requires any surface, such as a sheet of paper or a game board, with simple printed structured patterns for real-time high-accuracy 2D localization\cite{yu2019swarm}.
 
 To stimulate future research on swarm user interfaces, we distribute our Misaka tabletop swarm user interface platform in open-source and open-hardware.
 
@@ -572,6 +571,8 @@ All necessary material and documentation for implementing Misaka can be found at
 
 % \href{https://github.com/TingliangZhang/Misaka}{https://github.com/TingliangZhang/Misaka}
 \url{https://github.com/TingliangZhang/Misaka}
+
+% \section{Acknowledgement}
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,refs}
