@@ -273,6 +273,6 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
-*.pdf
+# *.pdf
 Misaka.pdf
 figures/.ipynb_checkpoints/scatterplots-checkpoint.ipynb
