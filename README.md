@@ -1,5 +1,9 @@
 # Misaka-Conference
 
+
+
+## 编译
+
 编译命令：
 
 ```
@@ -19,7 +23,9 @@ pdflatex Misaka.tex 更新不了bib
 再次用PDFLaTeX 编译你的 .tex 文件，这个时候在文档中已经包含了参考文献，但此时引用的编号可能不正确；
 最后用PDFLaTeX 编译你的 .tex 文件，如果一切顺利的话, 这是所有东西都已正常了。
 
-# 大纲   Outline
+
+
+## 大纲   Outline
 
 Misaka: A Visualized Swarm Testbed for Smart Grid Algorithm Evaluation
 
@@ -70,3 +76,25 @@ UI EXAMPLES WITH MISAKA :
 LIMITATIONS AND FUTURE WORK
 
 CONCLUSION
+
+
+
+## 挂arXiv
+
+# Endorsement needed for eess.SY
+
+You must get an endorsement from another user to submit an article to category eess.SY (Systems and Control).
+
+*arXiv is an openly accessible, moderated repository for scholarly articles in specific scientific disciplines. Material submitted to arXiv is expected to be of interest, relevance, and value to those disciplines. Endorsement is necessary but not sufficient to have a article accepted in arXiv. All submissions are subject to [moderation](https://arxiv.org/help/moderation) and arXiv reserves the right to reject or reclassify any submission.*
+
+We've sent an email message to **ztl20@tsinghua.org.cn** with a unique *endorsement code*; please forward this e-mail to someone authorized to endorse you for category eess.SY (Systems and Control.)
+
+**Who is qualified to endorse?**
+
+To endorse another user to submit to the eess.SY (Systems and Control) subject class, an arXiv submitter must have submitted 3 papers to **any of eess.AS, eess.IV, eess.SP or eess.SY** earlier than three months ago and less than five years ago.
+
+You can find out if a particular person is qualified to endorse by looking up one or more of their articles and clicking on the link "Which of the authors of this article can endorse?" at the bottom of the abstract.
+
+It would be good for you to find an endorser who is connected with you: for instance, if you're a graduate student, your thesis advisor or another professor in your department would be a good choice. Otherwise, you should choose an endorser whose work is related to the subject of your article.
+
+**Your unique endorsement code is: GGUBKT**
